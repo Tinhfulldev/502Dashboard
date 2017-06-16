@@ -10,15 +10,14 @@ class Logout extends CI_Controller {
 
 		// to protect the controller to be accessed only by registered users
 	    if(!$this->session->userdata('logged_in')){
-
-			redirect('login', 'refresh');
-
+				redirect('login', 'refresh');
 		}
 
 	}
 
 	public function index() {
 
+		//delete session
 		$this->session->unset_userdata('user_data_session');
 		$this->session->set_userdata('logged_in', false);
 		redirect(base_url().login);
