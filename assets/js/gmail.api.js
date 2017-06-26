@@ -56,13 +56,27 @@ var clientId = '499379964607-qs4mvdnnotioj4b2euf4ib37qv9n2nb2.apps.googleusercon
               'userId': 'me',
               'id': this.id
             });
-            if(index%2 == 1){
+            if(index%6 == 0){
 
             messageRequest.execute(appendMessageRow);
           }
-            else{
+            else if(index%6 == 1){
               messageRequest.execute(appendMessageRow1);
             }
+            else if(index%6 == 2){
+              messageRequest.execute(appendMessageRow2);
+            }
+            else if(index%6 == 3){
+              messageRequest.execute(appendMessageRow3);
+            }
+            else if(index%6 == 4){
+              messageRequest.execute(appendMessageRow4);
+            }
+            else if(index%6 == 5){
+              messageRequest.execute(appendMessageRow5);
+            }
+
+            messageRequest.execute(appendMessagePopUpRow);
           });
         });
       }
@@ -74,55 +88,14 @@ var clientId = '499379964607-qs4mvdnnotioj4b2euf4ib37qv9n2nb2.apps.googleusercon
                 <div class="panel">\
                 <div class="panel-body">\
                 <span class="arrow"></span> <span class="tl-icon red"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
-                <h3 class="red">'+getHeader(message.payload.headers, 'From')+'</h3>\
+                <h3 class="green">'+getHeader(message.payload.headers, 'From')+'</h3>\
                 <a href="#message-modal-' + message.id +
                   '" data-toggle="modal" id="message-link-' + message.id+'"><p>'+getHeader(message.payload.headers, 'Subject')+'</p>\
                </a>\
               </div></div></div></div>'
-
         );
-        $('.table-inbox tbody').append(
-          '<tr>\
-            <td>'+getHeader(message.payload.headers, 'From')+'</td>\
-            <td>\
-              <a href="#message-modal-' + message.id +
-                '" data-toggle="modal" id="message-link-' + message.id+'">' +
-                getHeader(message.payload.headers, 'Subject') +
-              '</a>\
-            </td>\
-             <td>'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</td>\
-          </tr>'
-        );
-
-        $('body').append(
-          '<div class="modal fade" id="message-modal-' + message.id +
-              '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-            <div class="modal-dialog modal-lg">\
-              <div class="modal-content">\
-                <div class="modal-header">\
-                  <button type="button"\
-                          class="close"\
-                          data-dismiss="modal"\
-                          aria-label="Close">\
-                    <span aria-hidden="true">&times;</span></button>\
-                  <h4 class="modal-title" id="myModalLabel">' +
-                    getHeader(message.payload.headers, 'Subject') +
-                  '</h4>\
-                </div>\
-                <div class="modal-body">\
-                  <iframe id="message-iframe-'+message.id+'" srcdoc="<p>Loading...</p>">\
-                  </iframe>\
-                </div>\
-              </div>\
-            </div>\
-          </div>'
-        );
-
-        $('#message-link-'+message.id).on('click', function(){
-          var ifrm = $('#message-iframe-'+message.id)[0].contentWindow.document;
-          $('body', ifrm).html(getBody(message.payload));
-        });
       }
+
 
       function appendMessageRow1(message) {
         $('.tl').append(
@@ -130,14 +103,75 @@ var clientId = '499379964607-qs4mvdnnotioj4b2euf4ib37qv9n2nb2.apps.googleusercon
               <div class="tl-desk">\
                 <div class="panel">\
                 <div class="panel-body">\
-                <span class="arrow-alt"></span> <span class="tl-icon red"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
-                <h3 class="red">'+getHeader(message.payload.headers, 'From')+'</h3>\
+                <span class="arrow-alt"></span> <span class="tl-icon green"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
+                <h3 class="yellow">'+getHeader(message.payload.headers, 'From')+'</h3>\
                 <a href="#message-modal-' + message.id +
                   '" data-toggle="modal" id="message-link-' + message.id+'"><p>'+getHeader(message.payload.headers, 'Subject')+'</p>\
                </a>\
               </div></div></div></div>'
 
         );
+      }
+
+      function appendMessageRow2(message) {
+        $('.tl').append(
+          ' <div class="tl-item">\
+              <div class="tl-desk">\
+                <div class="panel">\
+                <div class="panel-body">\
+                <span class="arrow"></span> <span class="tl-icon blue"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
+                <h3 class="red">'+getHeader(message.payload.headers, 'From')+'</h3>\
+                <a href="#message-modal-' + message.id +
+                  '" data-toggle="modal" id="message-link-' + message.id+'"><p>'+getHeader(message.payload.headers, 'Subject')+'</p>\
+               </a>\
+              </div></div></div></div>'
+        );
+      }
+      function appendMessageRow3(message) {
+        $('.tl').append(
+          ' <div class="tl-item alt">\
+              <div class="tl-desk">\
+                <div class="panel">\
+                <div class="panel-body">\
+                <span class="arrow-alt"></span> <span class="tl-icon turquoise"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
+                <h3 class="green">'+getHeader(message.payload.headers, 'From')+'</h3>\
+                <a href="#message-modal-' + message.id +
+                  '" data-toggle="modal" id="message-link-' + message.id+'"><p>'+getHeader(message.payload.headers, 'Subject')+'</p>\
+               </a>\
+              </div></div></div></div>'
+        );
+      }
+      function appendMessageRow4(message) {
+        $('.tl').append(
+          ' <div class="tl-item">\
+              <div class="tl-desk">\
+                <div class="panel">\
+                <div class="panel-body">\
+                <span class="arrow"></span> <span class="tl-icon orange"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
+                <h3 class="turquoise">'+getHeader(message.payload.headers, 'From')+'</h3>\
+                <a href="#message-modal-' + message.id +
+                  '" data-toggle="modal" id="message-link-' + message.id+'"><p>'+getHeader(message.payload.headers, 'Subject')+'</p>\
+               </a>\
+              </div></div></div></div>'
+        );
+      }
+      function appendMessageRow5(message) {
+        $('.tl').append(
+          '<div class="tl-item alt">\
+              <div class="tl-desk">\
+                <div class="panel">\
+                <div class="panel-body">\
+                <span class="arrow-alt"></span> <span class="tl-icon red"></span> <span class="tl-date">'+new Date(getHeader(message.payload.headers, 'Date')).toDateString().slice(4,15)+'</span>\
+                <h3 class="blue">'+getHeader(message.payload.headers, 'From')+'</h3>\
+                <a href="#message-modal-' + message.id +
+                  '" data-toggle="modal" id="message-link-' + message.id+'"><p>'+getHeader(message.payload.headers, 'Subject')+'</p>\
+               </a>\
+              </div></div></div></div>'
+        );
+      }
+
+
+      function appendMessagePopUpRow(message) {
         $('.table-inbox tbody').append(
           '<tr>\
             <td>'+getHeader(message.payload.headers, 'From')+'</td>\
@@ -178,7 +212,10 @@ var clientId = '499379964607-qs4mvdnnotioj4b2euf4ib37qv9n2nb2.apps.googleusercon
         $('#message-link-'+message.id).on('click', function(){
           var ifrm = $('#message-iframe-'+message.id)[0].contentWindow.document;
           $('body', ifrm).html(getBody(message.payload));
+
+
         });
+
       }
 
       function getHeader(headers, index) {

@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 				}
 
 				public function index() {
-							$this->load->view('login');
+							$this->load->view('login1');
 				}
 
 				/* login auth process */
@@ -94,6 +94,11 @@ class Login extends CI_Controller {
 					public function home() {
 						$data['content'] = 'dashboard';
 						$this->load->view('dashboard', $data);
+					}
+
+					public function login1(){
+						$this->load->view('main');
+
 					}
 
 }

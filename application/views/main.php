@@ -15,6 +15,20 @@
 <style type="text/css" title="AppleStyle">
   @import url("<?php echo base_url();?>assets/css/Weather.css");
 </style>
+<style>
+  iframe {
+    width: 100%;
+    border: 0;
+    min-height: 100%;
+
+  }
+  .modal-body{
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    height: 600px;
+  }
+
+</style>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -52,12 +66,12 @@
 
   <script src="<?php echo base_url();?>assets3/sparkline/jquery.sparkline.js" type="text/javascript"></script>
   <script src="<?php echo base_url();?>assets3/sparkline/jquery.customSelect.min.js" ></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src='https://cdn.rawgit.com/monkeecreate/jquery.simpleWeather/master/jquery.simpleWeather.min.js'></script>
+  <script src='<?php echo base_url();?>assets/js/jquery-2.1.3.min.js'></script>
+  <script src='<?php echo base_url();?>assets/js/jquery.simpleWeather.min.js'></script>
   <script src="<?php echo base_url();?>assets/js/weather.js"></script>
   <script src="<?php echo base_url();?>assets/js/jquery.rss.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/rss-feed.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/moment-2.8.4.min.js"></script>
 
 
   <script src="<?php echo base_url();?>assets1/js/select-checkbox.js"></script>

@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="widget">
-      <div class="widget-header"> <i class="icon-tasks"></i>
-        <h3>Timeline</h3>
+      <div class="widget-header"> <i class="icon-envelope"></i>
+        <h3>Gmail</h3>
       </div>
       <div class="widget-content">
         <div class="panel">
           <div class="panel-body">
             <div class="text-center mbot30">
-              <h3 class="time-title">Timeline</h3>
-              <p class="t-info">This is a project time</p>
+              <h3 class="time-title">502generic@gmail.com</h3>
+              <p class="t-info">502Cannabis</p>
             </div>
             <div class="tl">
               <div class="tl-item">
