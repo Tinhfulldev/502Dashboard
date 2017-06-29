@@ -49,10 +49,11 @@
       var element = document.getElementById(domNode);
       var html = '<ul>';
       while(n < x) {
-        html += '<li>' + tweets[n] + '</li>';
+        html += '<div class="panel-body">' + tweets[n] + '</div>';
         n++;
       }
       html += '</ul>';
+
       element.innerHTML = html;
     } else {
       customCallbackFunction(tweets);
@@ -337,14 +338,14 @@
               }
             }
             if (printUser) {
-              op += '<div class="user">' + strip(authors[n].innerHTML) +
-                  '</div>';
+              op += '<a class="thumb pull-left m-r" href="'+strip((authors[n].getElementsByTagName('a')[0]).getAttribute('href'))+'" target = "_blank">'+'<img class="img-circle" src="'+strip((authors[n].getElementsByTagName('img')[0]).getAttribute('data-src-2x'))+'"></a>'+'<div class="clear"><a class="text-info" href="'+strip((authors[n].getElementsByTagName('a')[0]).getAttribute('href'))+'" target = "_blank">' + strip((authors[n].getElementsByTagName('span')[2]).getAttribute('title')) +
+                  ' <i class="icon-twitter"></i></a>';
             }
-            op += '<p class="tweet">' + strip(tweets[n].innerHTML) + '</p>';
+            op += '<small class="block text-muted">' + strip(tweets[n].innerHTML) + '</small>';
             if (printTime) {
               if (permalinks) {
-                op += '<p class="timePosted"><a href="' + permalinksURL[n] +
-                   '">' + times[n].getAttribute('aria-label') + '</a></p>';
+                op += '<a class="btn btn-xs btn-info m-t-xs" href="' + permalinksURL[n] +
+                   '" target = "_blank">' + times[n].getAttribute('aria-label') + '</a></div>';
               } else {
                 op += '<p class="timePosted">' +
                     times[n].getAttribute('aria-label') + '</p>';
@@ -370,7 +371,7 @@
               }
             }
           }
-          
+
           if (showImages && images[n] !== undefined && extractImageUrl(images[n]) !== undefined) {
             op += '<div class="media">' +
                 '<img src="' + extractImageUrl(images[n]) +

@@ -12,6 +12,7 @@
 <link href="<?php echo base_url();?>assets1/style/style.css" rel="stylesheet">
 <link href="<?php echo base_url();?>assets1/style/dashboard.css" rel="stylesheet">
 <link href="<?php echo base_url();?>assets3/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+ <link href="<?php echo base_url();?>assets/css/twitter_style.css" rel="stylesheet" type="text/css" />
 <style type="text/css" title="AppleStyle">
   @import url("<?php echo base_url();?>assets/css/Weather.css");
 </style>
@@ -76,6 +77,8 @@
 
   <script src="<?php echo base_url();?>assets1/js/select-checkbox.js"></script>
   <script src="<?php echo base_url();?>assets/js/gmail.api.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/js/twitterFetcher.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/js/exampleUsage.js"></script>
   <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 
 

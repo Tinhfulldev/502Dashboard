@@ -3,22 +3,19 @@
 * You can do whatever the hell you want on your site :-)
 */
 
-body {
-  font-family:Arial,"Liberation Sans",sans-serif;
-}
 
 h2 {
   clear:both;
 }
 
 p, a {
-  font-size:9pt;
-  margin:10px 0 0 0;
-  color:#3d3d3d;
+  /* font-size:9pt; */
+  /* margin:10px 0 0 0; */
+  /* color:#3d3d3d; */
 }
 
 a, a:visited {
-  color:#427fed;
+  /* color:#427fed; */
 }
 
 a:hover {
@@ -26,11 +23,11 @@ a:hover {
 }
 
 ul li {
-  list-style:none;
-  overflow:hidden;
+  /* list-style:none; */
+  /* overflow:hidden; */
   /* border:1px solid #dedede; */
-  margin:5px;
-  padding:5px;
+  /* margin:5px; */
+  /* padding:5px; */
 }
 
 ul li:hover {
@@ -38,15 +35,15 @@ ul li:hover {
 }
 
 .user, .tweet, .timePosted {
-  float:left;
+  /* float:left; */
 }
 
 .user {
-  width:25%;
+  /* width:25%; */
 }
 
 .tweet {
-  width:50%;
+  /* width:50%; */
 }
 
 .timePosted {
@@ -54,11 +51,11 @@ ul li:hover {
 }
 
 .user {
-  clear:left;
+  /* clear:left; */
 }
 
 .user a {
- width: 100px;
+ /* width: 100px; */
 }
 
 .user span span {
@@ -68,12 +65,12 @@ ul li:hover {
 }
 
 .user img, .user a > span {
-  float:left;
+  /* float:left; */
 }
 
 
 .user a > span {
-  margin-left:10px;
+  /* margin-left:10px; */
 }
 
 .media img {

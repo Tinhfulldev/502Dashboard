@@ -117,3 +117,19 @@
         </div>
       </div>
     </div>
+
+
+    <div class = "row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="widget">
+          <div class="widget-header"> <i class="icon-twitter"></i>
+            <h3>Twitter FEED</h3>
+          </div>
+          <div class="widget-container">
+
+              <div id="twitter-feeds"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
